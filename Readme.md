@@ -30,7 +30,7 @@ Amazon Clone is a full-stack e-commerce application built with React Native (Exp
    npm install
    ```
 
-4. Set up your MongoDB Atlas account and obtain the connection URI.Replace the MONGODB_URI in the .env file with your URI.
+4. Set up your MongoDB Atlas account and obtain the connection URI. Replace the MONGODB_URI in the .env file with your URI.
 
 5. Start the Expo development server:
 

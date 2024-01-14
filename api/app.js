@@ -1,5 +1,6 @@
 import cors from 'cors';
 import dotenv from 'dotenv';
+import errorHandler from './middlewares/errorHandler.middleware.js';
 import express from 'express';
 import userRouter from './routes/auth.route.js';
 
@@ -33,5 +34,8 @@ app.use(express.static("public"));
 
 // Routes declaration
 app.use("/api/v1/users", userRouter);
+
+// errorHandler Middleware
+app.use(errorHandler);
 
 export { app };
