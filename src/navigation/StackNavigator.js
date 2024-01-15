@@ -3,6 +3,7 @@ import { StyleSheet, Text, View } from 'react-native'
 import BottomTabs from './BottomTabNavigator';
 import LoginScreen from '../screens/LoginScreen'
 import { NavigationContainer } from '@react-navigation/native'
+import ProductInfoScreen from '../screens/ProductInfoScreen';
 import React from 'react'
 import RegisterScreen from '../screens/RegisterScreen'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
@@ -12,7 +13,7 @@ export default function StackNavigator() {
 
     return (
         <NavigationContainer>
-            <Stack.Navigator>
+            <Stack.Navigator >
                 <Stack.Screen
                     name="Login"
                     component={LoginScreen}
@@ -29,6 +30,12 @@ export default function StackNavigator() {
                 <Stack.Screen
                     name="Main"
                     component={BottomTabs}
+                    options={{
+                        headerShown: false,
+                    }} />
+                <Stack.Screen
+                    name="Info"
+                    component={ProductInfoScreen}
                     options={{
                         headerShown: false,
                     }} />

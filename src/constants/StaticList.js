@@ -136,7 +136,7 @@ export const offers = [
             "https://m.media-amazon.com/images/I/71BlkyWYupL._SX679_.jpg",
             "https://m.media-amazon.com/images/I/71c1tSIZxhL._SX679_.jpg",
         ],
-        color: "black",
+        color: "Black",
         size: "Normal",
     },
     {
@@ -147,7 +147,7 @@ export const offers = [
         price: 3495,
         image: "https://m.media-amazon.com/images/I/41t7Wa+kxPL._AC_SY400_.jpg",
         carouselImages: ["https://m.media-amazon.com/images/I/41t7Wa+kxPL.jpg"],
-        color: "black",
+        color: "Black",
         size: "Normal",
     },
     {
