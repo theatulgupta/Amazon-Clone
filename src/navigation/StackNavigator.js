@@ -1,5 +1,7 @@
 import { StyleSheet, Text, View } from 'react-native'
 
+import AddAddressScreen from '../screens/AddAddressScreen';
+import AddressScreen from '../screens/AddressScreen';
 import BottomTabs from './BottomTabNavigator';
 import LoginScreen from '../screens/LoginScreen'
 import { NavigationContainer } from '@react-navigation/native'
@@ -13,7 +15,7 @@ export default function StackNavigator() {
 
     return (
         <NavigationContainer>
-            <Stack.Navigator >
+            <Stack.Navigator>
                 <Stack.Screen
                     name="Login"
                     component={LoginScreen}
@@ -39,11 +41,19 @@ export default function StackNavigator() {
                     options={{
                         headerShown: false,
                     }} />
+                <Stack.Screen
+                    name="Address"
+                    component={AddAddressScreen}
+                    options={{
+                        headerShown: false,
+                    }} />
+                <Stack.Screen
+                    name="AddAddress"
+                    component={AddressScreen}
+                    options={{
+                        headerShown: false,
+                    }} />
             </Stack.Navigator>
         </NavigationContainer>
     )
 }
-
-
-
-const styles = StyleSheet.create({})

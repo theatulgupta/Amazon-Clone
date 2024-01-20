@@ -16,7 +16,7 @@ export default async function sendVerificationEmail(email, token) {
         from: 'amazon.com',
         to: email,
         subject: 'Verify your email',
-        text: `Please click the following link to verify your email: http://localhost:8000/api/v1/users/verify/${token}`
+        text: `Please click the following link to verify your email: http://192.168.151.86:8000/api/v1/users/verify/${token}`
     }
 
     // send the mail

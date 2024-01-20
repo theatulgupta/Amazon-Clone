@@ -11,14 +11,14 @@ const router = express.Router();
 
 router.post('/register', asyncHandler(async (req, res) => {
     const { name, email, password } = req.body;
-    const newUser = await registerUser(name, email, password);
+    const newUser = registerUser(name, email, password);
     res.json({ message: 'User registered successfully, verification email sent.', user: newUser });
 }));
 
 router.get('/verify/:token', asyncHandler(async (req, res) => {
     const token = req.params.token;
     const verifiedUser = await verifyEmail(token);
-    res.json({ message: 'Email verified successfully' });
+    res.json({ message: 'Email verified successfully', verifiedUser });
 }));
 
 router.post('/login', asyncHandler(async (req, res) => {

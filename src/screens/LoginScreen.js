@@ -138,7 +138,7 @@ const styles = StyleSheet.create({
         color: 'gray',
     },
     inputTxt: {
-        color: 'gray',
+        color: 'black',
         marginVertical: 10,
         width: '75%',
         fontSize: 16,

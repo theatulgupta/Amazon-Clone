@@ -1,3 +1,4 @@
+import addressRouter from './routes/address.route.js';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import errorHandler from './middlewares/errorHandler.middleware.js';
@@ -34,6 +35,7 @@ app.use(express.static("public"));
 
 // Routes declaration
 app.use("/api/v1/users", userRouter);
+app.use("/api/v1/address", addressRouter);
 
 // errorHandler Middleware
 app.use(errorHandler);
