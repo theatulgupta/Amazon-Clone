@@ -3,8 +3,10 @@ import { StyleSheet, Text, View } from 'react-native'
 import AddAddressScreen from '../screens/AddAddressScreen';
 import AddressScreen from '../screens/AddressScreen';
 import BottomTabs from './BottomTabNavigator';
+import ConfirmationScreen from '../screens/ConfirmationScreen';
 import LoginScreen from '../screens/LoginScreen'
 import { NavigationContainer } from '@react-navigation/native'
+import OrderScreen from '../screens/OrderScreen';
 import ProductInfoScreen from '../screens/ProductInfoScreen';
 import React from 'react'
 import RegisterScreen from '../screens/RegisterScreen'
@@ -50,6 +52,18 @@ export default function StackNavigator() {
                 <Stack.Screen
                     name="AddAddress"
                     component={AddressScreen}
+                    options={{
+                        headerShown: false,
+                    }} />
+                <Stack.Screen
+                    name="Confirm"
+                    component={ConfirmationScreen}
+                    options={{
+                        headerShown: false,
+                    }} />
+                <Stack.Screen
+                    name="Order"
+                    component={OrderScreen}
                     options={{
                         headerShown: false,
                     }} />

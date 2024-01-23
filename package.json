@@ -4,8 +4,8 @@
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
     "start": "expo start",
-    "android": "expo start --android",
-    "ios": "expo start --ios",
+    "android": "expo run:android",
+    "ios": "expo run:ios",
     "web": "expo start --web"
   },
   "dependencies": {
@@ -20,14 +20,18 @@
     "core-js": "^3.35.0",
     "core-js-pure": "^3.35.0",
     "expo": "^49.0.0",
+    "expo-splash-screen": "~0.20.5",
     "expo-status-bar": "~1.6.0",
     "jwt-decode": "^4.0.0",
+    "lottie-react-native": "^6.5.1",
     "react": "18.2.0",
     "react-native": "0.72.6",
     "react-native-base64": "^0.2.1",
     "react-native-dropdown-picker": "^5.4.6",
     "react-native-image-slider-box": "^2.0.7",
+    "react-native-loader-kit": "^2.0.5",
     "react-native-modals": "^0.22.3",
+    "react-native-razorpay": "^2.3.0",
     "react-native-safe-area-context": "4.6.3",
     "react-native-screens": "~3.22.0",
     "react-redux": "^9.1.0",
@@ -35,6 +39,7 @@
   },
   "private": true,
   "devDependencies": {
+    "@babel/core": "^7.20.0",
     "@types/jsonwebtoken": "^9.0.5",
     "@types/react": "~18.2.14",
     "@types/react-native": "~0.64.12",

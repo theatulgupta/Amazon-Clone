@@ -13,7 +13,7 @@ const ProductItem = ({ item }) => {
     const addItemToCart = (item) => {
         setAddedToCart(true);
         dispatch(addToCart(item));
-        setTimeout(() => { setAddedToCart(false) }, 10000)
+        setTimeout(() => { setAddedToCart(false) }, 5000)
     }
 
     return (

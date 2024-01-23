@@ -1,12 +1,4 @@
-import { User } from '../models/User.model.js';
-
-const findUserById = async (userId) => {
-    const user = await User.findById(userId);
-    if (!user) {
-        throw new Error('User not found');
-    }
-    return user;
-};
+import findUserById from '../utils/user.util.js';
 
 const addAddress = async (userId, address) => {
     const user = await findUserById(userId);

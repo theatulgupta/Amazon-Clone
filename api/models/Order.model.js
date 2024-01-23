@@ -1,6 +1,6 @@
 import mongoose, { Schema } from "mongoose";
 
-import { addressSchema } from "./User.model";
+import { addressSchema } from "./User.model.js";
 
 const productSchema = {
     name: {

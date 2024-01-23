@@ -21,6 +21,7 @@ const HomeScreen = () => {
     const { userId, setUserId } = useContext(UserContext);
 
     const [addresses, setAddresses] = useState([]);
+    const [defaultAddressSet, setDefaultAddressSet] = useState(false);
     const [selectedAddress, setSelectedAddress] = useState('');
     const [products, setProducts] = useState([]);
     const [open, setOpen] = useState(false);
@@ -36,13 +37,23 @@ const HomeScreen = () => {
     const navigation = useNavigation();
 
     useEffect(() => {
-        if (userId) fetchAddresses({ userId, setAddresses });
-    }, [userId, modalVisible])
-
-    useEffect(() => {
         fetchUser({ setUserId })
         fetchProducts(setProducts)
     }, []);
+
+    useEffect(() => {
+        if (userId) {
+            fetchAddresses({ userId, setAddresses });
+        }
+    }, [userId, setAddresses, modalVisible]);
+
+    useEffect(() => {
+        // After addresses are fetched, set the default selected address once
+        if (!defaultAddressSet && addresses.length > 0) {
+            setSelectedAddress(addresses[0]);
+            setDefaultAddressSet(true);
+        }
+    }, [addresses, defaultAddressSet]);
 
     const cart = useSelector((state) => state.cart.cart);
 
@@ -67,7 +78,7 @@ const HomeScreen = () => {
                                 textAlign: 'left',
                                 fontSize: 14,
                             }}>
-                                Deliver to - {selectedAddress?.name.split(' ')[0]} - {selectedAddress?.city}, {selectedAddress?.pincode}
+                                Deliver to - {selectedAddress?.name?.split(' ')[0]} - {selectedAddress?.city}, {selectedAddress?.pincode}
                             </Text>
 
                         </Pressable>
@@ -223,13 +234,11 @@ const HomeScreen = () => {
 
                         {addresses.map((item, index) => (
                             <Pressable
+                                key={index}
                                 onPress={() => {
                                     setSelectedAddress(item);
-                                    setTimeout(() => {
-                                        setModalVisible(false);
-                                    }, 1000)
-                                }
-                                }
+                                    setModalVisible(false);
+                                }}
                                 style={[styles.selectedAddressContainer, {
                                     backgroundColor: selectedAddress === item ? '#FFF2EA' : 'white',
                                     borderColor: selectedAddress === item ? '#FF8E42' : '#D0D0D0',

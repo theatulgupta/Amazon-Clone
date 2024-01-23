@@ -32,7 +32,6 @@ const BottomTabs = () => {
                 options={{
                     tabBarLabel: "Profile",
                     tabBarLabelStyle: { color: '#008E97' },
-                    headerShown: false,
                     tabBarIcon: ({ focused }) =>
                         focused ? (
                             <MaterialIcons name="person" size={24} color="#008E97" />

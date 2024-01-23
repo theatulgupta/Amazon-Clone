@@ -3,6 +3,8 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import errorHandler from './middlewares/errorHandler.middleware.js';
 import express from 'express';
+import orderRouter from './routes/order.route.js';
+import profileRouter from './routes/profile.route.js';
 import userRouter from './routes/auth.route.js';
 
 const app = express();
@@ -36,6 +38,8 @@ app.use(express.static("public"));
 // Routes declaration
 app.use("/api/v1/users", userRouter);
 app.use("/api/v1/address", addressRouter);
+app.use("/api/v1/order", orderRouter);
+app.use("/api/v1/user/profile", profileRouter);
 
 // errorHandler Middleware
 app.use(errorHandler);

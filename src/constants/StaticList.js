@@ -143,6 +143,7 @@ export const offers = [
         id: "2",
         title: "Aishwariya System On Ear Wireless On Ear Bluetooth Headphones",
         offer: "40%",
+        offer: "40%",
         oldPrice: 7955,
         price: 3495,
         image: "https://m.media-amazon.com/images/I/41t7Wa+kxPL._AC_SY400_.jpg",

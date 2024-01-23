@@ -13,6 +13,7 @@ export default function LoginScreen() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const navigation = useNavigation();
+    const [loading, setLoading] = useState(false);
 
     useEffect(() => {
         checkLoginStatus();
@@ -23,10 +24,16 @@ export default function LoginScreen() {
             const token = await AsyncStorage.getItem('authToken');
             if (token) {
                 navigation.replace('Main');
+            } else {
+                setLoading(true);
             }
         } catch (error) {
             console.error(error);
         }
+    }
+
+    if (!loading) {
+        // return <SplashScreen />
     }
 
     const handleLogin = async () => {

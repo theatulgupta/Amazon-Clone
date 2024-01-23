@@ -1,21 +1,26 @@
 import { AntDesign, Entypo, Feather, Ionicons, MaterialIcons, } from '@expo/vector-icons';
 import { Pressable, ScrollView, StatusBar, StyleSheet, Text, View } from 'react-native';
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useCallback, useContext, useEffect, useState } from 'react';
+import { useFocusEffect, useNavigation } from '@react-navigation/native';
 
 import SearchHeader from '../components/SearchHeader';
 import { UserContext } from "../../UserContext";
 import { fetchAddresses } from '../constants/Api';
-import { useNavigation } from '@react-navigation/native';
 
 const AddAddressScreen = () => {
     const { userId } = useContext(UserContext);
-
     const [addresses, setAddresses] = useState([]);
     const navigation = useNavigation();
 
-    useEffect(() => {
+    const fetchAndSetAddresses = useCallback(() => {
         fetchAddresses({ userId, setAddresses });
-    }, [setAddresses]);
+    }, [userId]);
+
+    useEffect(() => {
+        fetchAndSetAddresses();
+    }, [fetchAndSetAddresses]);
+
+    useFocusEffect(fetchAndSetAddresses);
 
     return (
         <ScrollView showsVerticalScrollIndicator={false}>
